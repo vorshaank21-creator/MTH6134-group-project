@@ -7,6 +7,7 @@ MTH6134 Statistical Modelling II group project, QMUL 2026–27
 |------|----------------|-----------------|-----------|
 | Vorshaan Karunanithy |210278877 | vorshaank21-creator | |
 | Juan Balcazar |240599348 |juanbalcazarp | |
+| Shaima Mohsin |230613094 | shmohsin04 ||
 | | | | |
 | | | | |
 
