@@ -1,1 +1,5 @@
-**the who-did-what template**
+# Who did what
+
+| Date | Member | What they worked on | Files |
+|------|--------|---------------------|-------|
+|      |        |                     |       |
