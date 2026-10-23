@@ -1,4 +1,7 @@
 ## WEEK 5 - RESIDUALS AND DIAGNOSTICS
+# Checking the GLMs already fitted in Weeks 3 and 4 (no new models), using the
+# methods from the Week 4 lectures (budworm and eagle examples) and the
+# Week 5 practical (turtle and lungcap examples).
 
 ashford_matches <- read.csv("data/ashford_matches.csv")
 league_players  <- read.csv("data/league_players.csv")
@@ -49,15 +52,6 @@ plot(cooks.distance(injury_glm), type = "h",
      xlab = "Obs. number", ylab = "Cook's distance")
 max(cooks.distance(injury_glm))
 
-# Do we need extra terms? Add them and check the drop in deviance
-injury_glm2 <- glm(injured ~ training_load + prev_injuries + age + bmi + position,
-                   data = league_players, family = binomial)
-anova(injury_glm, injury_glm2, test = "Chisq")
-
-injury_glm3 <- glm(injured ~ training_load + prev_injuries + poly(age, 2) + bmi,
-                   data = league_players, family = binomial)
-anova(injury_glm, injury_glm3, test = "Chisq")
-
 ############################################################
 # (B) POISSON GLM - ASHFORD GOALS SCORED
 ############################################################
@@ -95,15 +89,3 @@ mean(hatvalues(poisson_model))
 plot(cooks.distance(poisson_model), type = "h",
      xlab = "Obs. number", ylab = "Cook's distance")
 ashford_matches[8, ]   # match 8 stands out: 8-0 home win against the bottom side
-
-# How much does match 8 change the fit? Refit without it and compare
-poisson_no8 <- glm(goals_scored ~ opponent_rank, data = ashford_matches[-8, ],
-                   family = poisson(link = "log"))
-summary(poisson_no8)
-
-# Is home/away missing from the model? Check the drop in deviance
-poisson_model2 <- glm(goals_scored ~ opponent_rank + home_away,
-                      data = ashford_matches, family = poisson(link = "log"))
-summary(poisson_model2)
-anova(poisson_model, poisson_model2, test = "Chisq")
-1 - pchisq(poisson_model2$deviance, poisson_model2$df.residual)
