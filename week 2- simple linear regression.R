@@ -1,6 +1,6 @@
 #WEEK 2 SLRMs
 # first data set
-league_players<- read.csv("league_players.csv")
+league_players<- read.csv("data/league_players.csv")
 x<- lm(bmi~age, data=league_players)
 summary(x)
 plot(x)
@@ -11,7 +11,7 @@ qqnorm(stdres, main= "qq_plot_x")
 qqline(stdres)
 
 # second data set
-ashford_matches <- read.csv("ashford_matches.csv")
+ashford_matches <- read.csv("data/ashford_matches.csv")
 y<- lm(goals_scored~ goals_conceded, data=ashford_matches)
 summary(y)
 plot(y)
