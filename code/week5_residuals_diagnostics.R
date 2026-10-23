@@ -1,7 +1,4 @@
 ## WEEK 5 - RESIDUALS AND DIAGNOSTICS
-# Checking the GLMs already fitted in Weeks 3 and 4 (no new models), using the
-# methods from the Week 4 lectures (budworm and eagle examples) and the
-# Week 5 practical (turtle and lungcap examples).
 
 ashford_matches <- read.csv("data/ashford_matches.csv")
 league_players  <- read.csv("data/league_players.csv")
