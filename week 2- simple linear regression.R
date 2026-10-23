@@ -11,8 +11,8 @@ qqnorm(stdres, main= "qq_plot_x")
 qqline(stdres)
 
 # second data set
-ashford_matches.csv<- read.csv("ashford_matches.csv")
-y<- lm(goals_scored~ goals_conceded, data=ashford_matches.csv)
+ashford_matches <- read.csv("ashford_matches.csv")
+y<- lm(goals_scored~ goals_conceded, data=ashford_matches)
 summary(y)
 plot(y)
 stdres_y<- rstandard(y)
