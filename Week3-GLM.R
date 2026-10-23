@@ -22,5 +22,5 @@ league_players$predicted_prob <- fitted(injury_glm)
 #Boxplot to visualise the data
 boxplot(predicted_prob ~ injured, data = league_players,
         main = "Predicted Probabilities vs Actual Injury Status",
-        xlab = "Actual Injury Status (H = Healthy, I = Injured)",
+        xlab = "Actual Injury Status (F = Fit, I = Injured)",
         ylab = "Predicted Probability")
