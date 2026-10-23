@@ -1,0 +1,21 @@
+# first data set
+league_players= read.csv("league_players.csv")
+x= lm(bmi~age, data=league_players)
+summary(x)
+plot(x)
+stdres= rstandard(x)
+fits= fitted(x)
+plot(fits, stdres, main= "std residuals versus fits")
+qqnorm(stdres, main= "qq_plot_x")
+qqline(stdres)
+
+# second data set
+ashford_matches.csv= read.csv("ashford_matches.csv")
+y= lm(goals_scored~ goals_conceded, data=ashford_matches.csv)
+summary(y)
+plot(y)
+stdres_y= rstandard(y)
+fits_y= fitted(y)
+plot(fits_y,stdres_y, main="std residual versus fits_y")
+qqnorm(stdres_y, main= "qq_plot_y")
+qqline(stdres_y)
